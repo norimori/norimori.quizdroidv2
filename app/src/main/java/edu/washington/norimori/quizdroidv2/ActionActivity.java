@@ -181,6 +181,7 @@ public class ActionActivity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right, 0, 0)
                         .replace(R.id.container, new questionFragment())
                         .commit();
                 }
@@ -233,6 +234,7 @@ public class ActionActivity extends ActionBarActivity {
                         View radioButton = radioGroup.findViewById(id);
                         radioId = radioGroup.indexOfChild(radioButton);
                         getSupportFragmentManager().beginTransaction()
+                            .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right, 0, 0)
                             .replace(R.id.container, new answerSummaryFragment())
                             .commit();
                     }
@@ -289,7 +291,8 @@ public class ActionActivity extends ActionBarActivity {
                         startActivity(nextActivity);
                     } else {
                         getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new questionFragment())
+                            .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right, 0, 0)
+                            .replace(R.id.container, new questionFragment())
                             .commit();
                     }
                 }
